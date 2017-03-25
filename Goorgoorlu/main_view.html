@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1 , user-scalable=yes">
+	<title>GOORGOORLU</title>
+
+	<link rel="stylesheet" type="text/css" href="julia-0.1/julia-0.1.css">
+	<link rel="stylesheet" type="text/css" href="css/main.css">
+	<script type="text/javascript" src="js/jquery-3.1.0.js"></script>
+</head>
+<body class="backapp">
+<style type="text/css" >
+	
+
+
+</style>
+
+   <div class="j_row">
+   	<div class="j_cont">
+   		
+       <!-- MENU BAR  -->
+   		<div class="j_s_col12 j_m_col12 j_l_col12 " style="position: fixed;width: 100%;z-index: 999;">
+   			 <ul class="j_menu backblue" style="min-height: 20px;">
+   			 	 
+                <!-- Change .html to .php for web and when performing requests  -->
+		                
+		                <li class="j_s_col1_5 j__nopad  j_center">
+		                <a href="/home.html">
+		                   <span><img src="img/logomin.png" class="menu_icon logobig"></span>
+		                   <!-- <span class="apptitle">GOORGOORLU</span>	 -->
+		                </a></li>
+
+		                <li class="j_s_col1_5 j__nopad activeItem j_center">
+		                <a href="/main.html">
+		                   <span><img src="img/iconhome.png" class="menu_icon"></span>	
+		                </a></li>   
+
+		                <li class="j_s_col1_5 j__nopad j_center">
+		                <a href="/search.html">
+		                   <span><img src="img/iconsearch.png" class="menu_icon"></span>	
+		                </a></li>                
+
+		                <li class="j_s_col1_5 j__nopad j_center">
+		                <a href="notifs.html">
+		                   <span><img src="img/iconnotifs.png" class="menu_icon"></span>	
+		                </a></li>
+
+		                <li class="j_s_col1_5 j__nopad j_center">
+		                <a href="profil.html">
+		                   <span><img src="img/iconprofil.png" class="menu_icon"></span>	
+		                </a></li>
+                 
+
+   			 </ul>
+   		</div>
+
+       <!-- MENU BAR  -->
+
+     
+       <!-- < Inner -->
+
+   		<div class="j_s_col12 j_m_col12 j_l_col12 container">
+
+           <!-- Here go all other contents  -->
+               <!--  Prestabox view -->
+               <a href="">
+	               <div class="j_s_col10 j_m_col4 j_l_col4 j_s_push1 j_m_push4 j_l_push4 prestabox">
+	               	 
+		               	 <div class="j_cont prestahead">
+		               	 	<h4>PLOMBIER</h4>
+		               	 </div>
+		                 <div class="j_cont">
+		                 	<img class="prestaimg" src="img/dk.jpg">
+		                 </div>
+		                 <div class="j_cont"> <span style="margin-left: 5px;"> Mouhammad Fadl Diop</span> </div>
+		                 <div class="j_cont prestabody">
+		               	 	 <div class="prestaleft"> Dakar, Fann-Hock FN45</div>
+		               	 	 <div class="prestaright">&#x2605; &#x2605; &#x2605; &#x2605; &#x2605;</div>
+
+		               	 </div>
+
+	               </div>  
+              </a>
+              
+         
+ 
+
+               <!--  Prestabox view -->
+
+
+        </div>
+
+       <!-- < Inner -->
+
+
+   	</div>
+   </div>
+
+     <script>
+		   
+				  
+				  function render(data){
+					  //fonctions qui se charge de lister les prestataires
+				var x = clGet("j_s_col12 j_m_col12 j_l_col12 container");
+			
+				var ligne1="<a href=''><div class='j_s_col10 j_m_col4 j_l_col4 j_s_push1 j_m_push4 j_l_push4 prestabox ' style=\"float:left\"><div class=\"j_cont prestahead\"><h4>"+data['libelle']+"</h4>";
+				var ligne2="</div><div class=\"j_cont\"><img class=\"prestaimg\" src=\"img/dk.jpg\"></div>"
+		        var ligne3="<div class=\"j_cont\"> <span style=\"margin-left: 5px;\">"+ data['prenom']+"</span> </div>";
+		        var ligne4="<div class=\"j_cont prestabody\"><div class=\"prestaleft\">"+ data['localisation']+"</div>";
+		        var ligne5="<div class=\"prestaright\">&#x2605; &#x2605; &#x2605; &#x2605; &#x2605;</div></div></div> </a>";
+				x.innerHTML+=ligne1+ligne2+ligne3+ligne4+ligne5;
+			      console.log(data);
+				  }
+
+				$(document).ready(function(){
+						$.ajax({
+						url:"../Controler/A.php",
+						type:"POST",
+						crossdomain:true,
+						cache:false,
+						data:{data:1},
+						dataType:'json',
+						success :function(data){
+						  render(data);
+						  
+						}
+					});
+				});
+			  </script>
+<script type="text/javascript" src="julia-0.1/julia-0.1.js"></script>
+<script type="text/javascript" src="js/main.js"></script>
+
+
+</body>
+</html>

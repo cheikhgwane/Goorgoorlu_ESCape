@@ -1,0 +1,460 @@
+/****************************************************/
+/************** GSS : GOORGOORLU STYLESHEET  *********/
+/*****************************************************/
+
+/*** This file specifies all the stylesheets needed to build our views ***/ 
+
+
+body
+{
+	margin : 0 auto;
+}
+
+
+@font-face
+{
+	font-family:'caps';
+	src:url('../fonts/capsuula.ttf');
+}
+
+@font-face
+{
+	font-family:'prime';
+	src:url('../fonts/primetime.ttf');
+}
+
+@font-face
+{
+	font-family:'bebas';
+	src:url('../fonts/bebasr.otf');
+}
+
+@font-face
+{
+	font-family:'curious';
+	src:url('../fonts/curious.ttf');
+}
+span
+{
+	font-family: 'caps';
+}
+
+h1,h2
+{
+	font-family: 'curious';
+}
+
+
+
+/****** GSS GRIDS  ************/
+
+
+.g_row
+{
+	margin: 0;
+    display: inline;
+}
+.g_cont
+{
+	position: relative;
+	margin: 0;
+	width: 100%;
+	display: block;
+	min-height: 40px;
+}
+
+.g_colfull
+{float:left;margin-left: 0;width: 100%;}
+.g_col9
+{float:left;margin-left: 0;width: 90%;}
+.g_col8
+{float:left;margin-left: 0;width: 80%;}
+.g_col1_2
+{float:left;margin-left: 0;width: 50%;}
+.g_col1_3
+{float:left;margin-left: 0;width: 33.33333%;}
+.g_col1_4
+{float:left;margin-left: 0;width: 25%;}
+.g_col1_5
+{float:left;margin-left: 0;width: 20%;}
+.g_col1_6
+{float:left;margin-left: 0;width: 16.66666%;}
+.g_col1_7
+{float:left;margin-left: 0;width: 14.28571%;}
+.g_col1_8
+{float:left;margin-left: 0;width: 12.50000%;}
+
+/********   MARGINS ********/
+
+.g_margtop
+{}
+.g_padh1
+{
+	padding-top: 80px;
+	padding-bottom: 80px;
+}
+
+.g_pushl_1
+{margin-left: 5%;}
+.g_pushl_2
+{margin-left: 10%;}
+.g_pushl_3
+{margin-left: 15%;}
+.g_pushl_4
+{margin-left: 20%;}
+.g_pushl_5
+{margin-left: 25%;}
+.g_pushl_6
+{margin-left: 30%;}
+.g_pushl_7
+{margin-left: 35%;}
+.g_pushlf25
+{margin-left: 37.5%;}
+/***************************/
+
+.g_incrust
+{
+	position: absolute; width: 100%; height: 500px;top: 0;left: 0;z-index: 2;
+}
+
+/****************************/
+.g_logo
+{
+	float: left;
+	max-width: 100%;
+	max-height: 100%;
+	margin-left: 30px;
+	margin-top: 30px;
+}
+
+.g_logo_min
+{
+	float: left;
+	max-width: 100%;
+	max-height: 100%;
+	margin-left: 20px;
+	margin-top: 5px;
+}
+
+
+.g_phone
+{
+	position: absolute;
+	bottom: 0;
+	right: 100px;
+}
+
+.g_header
+{
+	 -webkit-transition: 300ms;
+    transition: 300ms;
+ height: 150px;
+}
+.g_inner
+{
+  height: 350;
+}
+.g_land
+{
+	height: 500px;
+	position: relative;
+}
+
+.g_conticon
+{
+	margin-left: 60px;
+}
+
+.g_footer
+{
+	height: 100px;
+	width: 100%;
+	background-color: #000;
+}
+
+/*Colors*/
+
+.g_cblue
+{
+	color: #00ccff;
+}
+
+.g_cblue2
+{
+	color: #0ea6ca;
+}
+
+.g_bblue
+{
+	background-color:  #00ccff;
+}
+
+.g_bblue2
+{
+	background-color:  #0ea6ca;
+}
+.g_bblue2op
+{
+	background-color:  #0ea6ca;
+	opacity: 0.6;
+}
+.g_bgray1
+{
+	background-color:  #f9f9f9;
+	 
+}
+.g_bgray2
+{
+	background-color:  #f2f2f2;
+	 
+}
+.g_comh
+{
+  font-family: 'primetime';
+  font-size: 24px;
+
+}
+.g_comnum
+{
+	font-size: 98px;
+	font-family: 'curious';
+}
+
+.g_comname
+{
+  font-family: 'primetime';
+  font-size: 18px;
+
+}
+
+.g_cwhite
+{
+	color:  #f9f9f9;
+}
+
+.g_brwhite
+{
+	border:solid 1px #f9f9f9;
+}
+.g_bpink
+{
+	background-color: #d40055;
+	/*opacity: 0.4;*/
+}
+
+.g_borderedt
+{
+	text-shadow:  0 0 8px #ffffff;
+	color: #d40055;
+ 
+}
+
+
+.g_cgray
+{
+	color:  #cccccc;
+}
+
+
+
+.g_bwhite
+{
+	background-color: #f9f9f9;
+}
+.g_bblackop
+{
+	background-color: #000;
+	opacity: 0.6;
+}
+
+/********** UTILS **********/
+.g_right
+{
+   text-align: right;
+}
+.g_center
+{
+   text-align: center;
+}
+
+.g_hlink
+{
+	float: right;margin-top: 30px;margin-right: 30px;
+}
+.g_down
+{
+	cursor: pointer;
+	position: relative;
+	z-index: 3;
+	padding: 14px 34px;
+	margin-top: 30px;
+
+}
+.g_join
+{
+  	cursor: pointer;
+	position: relative;
+	z-index: 3;
+	padding: 14px 54px;
+	margin-top: 30px;	
+}
+.g_down:hover, .g_join:hover
+
+{
+	transition: ease-in 300ms;
+	background-color: #f9f9f9;
+	color: #00ccff;
+}
+.g_top
+{
+	position: relative;
+	z-index: 4;
+}
+
+.g_maintext
+{
+	margin-right: 0px;font-size: 48px;z-index: 3;position: relative;margin-top: -50px;
+}
+
+.g_capt1
+{
+	font-family: 'curious';
+	font-size: 14px;
+	margin-top: 5px;
+}
+
+.g_conts>span
+{
+	font-size: 24px;
+	margin-right: 30px;
+	font-family: 'bebas';
+}
+
+.g_info1
+{
+	position: relative;
+	z-index: 3;
+
+}
+
+.g_logo_switch
+{
+	position: relative;
+	margin-top: 2px;
+	transform: scale(0.7); 
+}
+.g_hide
+{
+	display: none;
+}
+.g_show
+{
+	display: block;
+}
+.g_fixheader1
+{
+	background-color: #0ea6ca;
+	height: 90px;
+	position: fixed;
+	top: 0px;
+	margin-bottom: 30px;
+ 
+
+}
+
+
+button
+{
+	border:none;
+
+	background-color: transparent;
+
+}
+
+/**************************/
+
+/**********  FIELDS ********/
+
+input
+{
+	border:solid 0.5px #00ccff;
+	width: 90%;
+	margin-left: 5%;
+	height: 50px;
+}
+ .g_phoneh
+ {
+ 	display: none;
+ }
+ .g_contmob
+ {
+ 	display: none;
+ }
+
+/* MEDIAS QUERIES */
+
+@media screen and (max-width: 800px)
+ {
+  /* PRESENTATION BLOC */
+
+  .g_logo
+  {
+  	margin: 2px;
+  }
+  .g_maintext
+  {
+     font-size: 20px;
+     margin-top: 0px;
+  }
+ .g_phone
+ {
+ 	display: none;
+ }
+  .g_phoneh
+ {
+ 	display: block;
+ 	position: absolute;
+
+ }
+  /* PRESENTATION BLOC */
+
+/*  START BLOC */
+
+
+
+.g_col1_3
+{
+	width: 100%;
+	margin-top: 10px;
+}
+.g_col1_4
+{
+	width: 100%;
+}
+.g_pushlf25
+{
+	margin-left: 0;
+}
+
+.g_com
+{
+	margin-top: 400px;
+}
+.g_contact
+{
+	margin-top: 400px;
+}
+
+.g_contmob
+{display: block;font-size: 24px;}
+.g_contbig
+{display: none;}
+
+.g_col1_2
+{
+	/*width: 100%;*/
+}
+/* START BLOC */
+
+
+}

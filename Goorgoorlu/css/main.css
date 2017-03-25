@@ -1,0 +1,607 @@
+ ul.backblue
+{
+	background-color:  #0ea6ca;
+}
+img.menu_icon
+{
+	width: 28px; 
+	border:none;
+}
+
+div.j_sames:hover
+{
+	background-color: #f9f9f9;
+	color: #0ea6ca;
+}
+
+ul.j_noch_pad>li,ul>li>a
+{
+
+  padding: 0;
+  padding: 13.5px 0px;
+
+}
+ 
+ul>li:hover
+{
+   	background-color: #1a1a1a;
+	color: #f9f9f9;
+}
+
+
+.backblueapp
+{
+  background-color: #0ea6ca;
+}
+
+.splashimg
+{
+	margin-top: 200px;
+}
+
+.backicon
+{
+	width: auto;
+	margin-top: 10px;
+	margin-left: 10px;
+}
+
+input
+{
+	background-color: transparent;
+	color: white;
+	font-family: 'caps';
+
+}
+
+input::-webkit-input-placeholder 
+{ 
+	color: #f2f2f2;
+	
+}
+input::-moz-placeholder
+{ 
+	color: #f2f2f2;
+	
+}
+
+input.j_submit
+{
+	border:solid 0.5px #f2f2f2;
+	background-color: #f9f9f9;
+	color: #0ea6ca;
+}
+input.j_submit:hover
+{
+	background-color:transparent;
+	color: #f2f2f2;
+	border:solid 0.5px #f2f2f2;
+
+}
+.c_midwhite
+{
+	color: #f2f2f2;
+}
+.refs
+{
+	position: absolute;
+	bottom: 10px;
+	display: block;
+	width: 100%;
+	color: #f2f2f2;
+}
+.activeItem
+{
+	background-color: #087792;
+}
+
+.presentation
+{
+	background-image: url('../img/backpres.png');
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+.boxinner
+{
+	background-color: #0b7790;
+}
+
+
+.frame
+{
+	background-color: #f2f2f2;
+	border: solid 0.5px #f3f3f3;
+	color: #0b7790;
+	/*text-indent: 10px;*/
+}
+.imgbtn
+{
+	cursor: pointer;
+}
+.imgbtn:hover
+{
+	box-shadow: 2px 2px gray;
+	opacity: 0.7;
+}
+
+.imgbtn.hideinmob
+{
+	margin-top: -15px;
+}
+.prestext
+{
+	margin: 5px;
+}
+
+
+.askaccount
+{ 
+  color: #f2f2f2; 
+}
+.backapp
+{
+	background-color: #f2f2f2;
+}
+
+.container, .container2
+{
+	margin-top: 80px; border-top: solid 0.5px #f1f1f1; overflow-y: scroll;
+}
+
+.prestabox,.notifbox
+{
+	background-color: white;
+	box-shadow: 0.5px 0.5px 0.5px 0.5px gray;
+	margin-bottom: 8px;
+	/*height: 200px;*/
+}
+.prestaimg
+{
+	width: 98%;
+	margin-left: 1%;
+	border-radius: 2px 2px ;
+}
+.prestahead > h4
+{
+	margin: 5px;
+	color: #087792;
+}
+.prestahead
+{
+	border-bottom: solid 0.5px #f4f4f4;
+	
+}
+.prestaleft
+{
+	float: left;
+	background-image: url('../img/mapper.png');
+	background-size: 12px;
+	background-position: 5px center ;
+	background-repeat: no-repeat;
+	font-family: 'caps';
+	height: 30px;
+	width: 50%;
+	line-height: 30px;
+	text-indent: 20px;
+	overflow: hidden;
+	font-weight: bold;
+}
+.prestaright
+{
+	float: right;
+	letter-spacing: -2px;
+	text-align: center;
+	width: 50%;
+	height: 30px;
+	line-height: 30px;
+	color: gray;
+
+}
+
+div.headsearch
+{
+	/*width: 100%;*/
+	color: white;
+	text-indent: 10px;
+}
+
+.notifbox
+{
+	font-size: 12px;
+}
+
+.notifleft
+{
+	float: left;
+	width: 80%;
+}
+.notifright
+{
+	float: right;
+	width: 10%;
+}
+.notifaddr
+{
+	/*text-indent: 45px;*/
+	background-image: url('../img/mapper.png');
+	background-size: 12px;
+	background-position: 5px center ;
+	background-repeat: no-repeat;
+}
+.backgrayapp
+{
+	background-color: #f2f2f2;
+}
+.seeLeft
+{
+	float: left;
+}
+.seetext
+{
+	margin-left: 10px;
+
+}
+.seeLeft>img
+{
+	width: 26px;
+	height: auto;
+	transform: scale(0.7);
+}
+
+.seetext.min
+{
+	margin-top: 5px;
+}
+.profilform > input, .profilform > div> input ,input.input
+{
+	border : solid 0.5px #087792;
+	color: gray;
+}
+.addbtn
+{
+	width: 32px;
+	float: right;
+	margin-top: 5px;
+}
+
+
+.pwordchanger
+{
+   width: 42px;
+   margin-top: 5px;
+   float: right;
+}
+.hiddenbox
+{
+
+  position: fixed;
+  top: 20%;
+  width: 100%;
+  border:solid 0.5px gray;
+
+}
+
+input.j_submit
+{
+	background-color: #087792;
+	color: white;
+}
+
+input.j_submit:hover
+{
+	background-color: white;
+	color: #087792;
+	border:solid 0.5px #087792;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/************** MEDIA QUERIES ***************/
+/********************************************/
+
+/***************  Mobile  *******************/
+ @media only screen and (max-width: 765px)
+ {
+ 
+  .apptitle
+  {
+  	display: none;
+  	margin-bottom: 0px;
+  	font-family: 'bebas';
+  }
+   .blocconnectmob
+  {
+  	height: 27%;
+  	background-color: #0ea6ca;
+  }
+
+	  .presentation
+	{
+
+		height: 200px;
+	}
+	.phoneview
+	{
+		width: 50%;
+		margin-top: 20px;
+	}
+
+	button.j_btn
+	{
+		margin-top: 5px;
+	}
+
+    .askaccount
+    {
+      margin-top: 25px;
+      color: #f2f2f2;
+      font-family: 'bebas';
+    }
+    .frame
+    {
+    	height: 35%;
+    	margin-top: 50px;
+    	float: right;
+    	margin-right: 10px;
+    }
+   .imgbtn
+   {
+   	width: 80%;
+   	margin-top: 5px;
+   }
+   .hideinmob
+   {
+   	display: none;
+   }
+.pretext
+	{
+		font-size: 16px;
+		margin-left: 10px;
+	}
+
+
+
+ }
+
+
+/*************** 		End 	****************/
+
+
+/***************  TABLETS & MINIS  **************/
+ @media only screen and (min-width: 766px)  and (max-width: 1024px)
+ {
+
+  .apptitle
+  {
+ 	visibility: visible;
+ 
+  	margin-bottom: 0px;
+  	font-family: 'bebas';
+  position: absolute;
+  bottom: 2px;
+  left: 4px;
+  font-size: 12px; 
+  color: #f9f9f9;
+
+  }
+
+ .showinmob
+ {
+ 	display: none;
+ }
+
+  .logobig
+  {
+  	transform: scale(2);
+  }
+.presentation
+ {
+
+	height: 350px;
+  }
+
+    .frame
+    {
+    	height: 50%;
+    	margin-top: 50px;
+    	float: right;
+    	margin-right: 10px;
+    }
+
+
+	.phoneview
+	{
+		width: 80px;
+	}
+
+   .imgbtn
+   {
+   	width: 50%;
+   	margin-top: 5px;
+   }
+
+   img.padonother
+   {
+   	margin-top: 10px;
+   } 
+  
+  .pretext
+	{
+		/*font-size: 30%;*/
+	}
+
+ }
+/***************       End        ****************/
+
+
+/***************       PCs       *****************/
+ @media only screen and (min-width: 1025px)
+ {
+ .showinmob
+ {
+ 	display: none;
+ }
+  .logobig
+  {
+  	transform: scale(2);
+  }
+
+
+  
+  .apptitle
+  {
+	  visibility: visible;
+	  margin-bottom: 0px;
+	  font-family: 'bebas';
+	  position: absolute;
+	  bottom: 2px;
+	  left: 4px;
+	  font-size: 12px;
+	  color: #f9f9f9;
+
+  }
+    .frame
+    {
+    	height: 35%;
+    	margin-top: 50px;
+    	float: right;
+    	margin-right: 10px;
+    }
+
+
+
+  .presentation
+	{
+
+		height: 350px;
+	}
+
+	.phoneview
+	{
+		width: 80px;
+	}
+
+   .imgbtn
+   {
+   	width: 25%;
+   	margin-top: 5px;
+   }
+
+   .padonother
+   {
+   	margin-top: 20px;
+   } 
+
+     .pretext
+	{
+		font-size: 42px;
+		font-family: 'bebas';
+		margin-top: 20px;
+		margin-left: 10px;
+	}
+
+ }
+/***************       End        ****************/
+
+
+/***************       PCs       *****************/
+ @media only screen and (min-width: 1025px)
+ {
+ .showinmob
+ {
+ 	display: none;
+ }
+  .logobig
+  {
+  	transform: scale(2);
+  }
+
+
+  
+  .apptitle
+  {
+	  visibility: visible;
+	  margin-bottom: 0px;
+	  font-family: 'bebas';
+	  position: absolute;
+	  bottom: 2px;
+	  left: 4px;
+	  font-size: 12px;
+	  color: #f9f9f9;
+
+  }
+    .frame
+    {
+    	height: 35%;
+    	margin-top: 50px;
+    	float: right;
+    	margin-right: 10px;
+    }
+
+
+
+  .presentation
+	{
+
+		height: 350px;
+	}
+
+	.phoneview
+	{
+		width: 80px;
+	}
+
+   .imgbtn
+   {
+   	width: 25%;
+   	margin-top: 5px;
+   }
+
+   .padonother
+   {
+   	margin-top: 20px;
+   } 
+
+     .pretext
+	{
+		font-size: 42px;
+		font-family: 'bebas';
+		margin-top: 40px;
+		margin-left: 10px;
+	}
+   .j_dropper
+   {
+   	margin-left: -8px;
+   }
+
+  .fliponother
+  {
+  	margin-left: 8px;
+  	width: 100%;
+  }
+
+ }
+
+
+
+/***************       End        ****************/
+ 
+
