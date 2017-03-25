@@ -154,7 +154,8 @@ function createAdmin($log,$mdp){
 /////////////////////////////////////////////////////////
 
 function Displayskills($id){
-     global $connexion;
+    global $connexion;
+
     $data=array();
     $q  = 'select * from Gjob where id_Gg='.$id;
     $result = mysqli_query($connexion,$q);
@@ -169,7 +170,117 @@ function Displayskills($id){
 
 /////////////////////////////////////////////////////////////
 
+function getGname($id) //Tested
+{
+     global $connexion;
 
+     $q = "SELECT prenom, nom FROM goorgoorlukat WHERE id=".$id;
+     $result = mysqli_query($connexion, $q);
+     $row = $result->fetch_assoc();
+
+     $fullName = $row['prenom']." ".$row['nom'];
+
+     return $fullName;
+
+}
+
+
+function getGloc($id) //Tested
+{
+     global $connexion;
+
+     $q = "SELECT localisation FROM goorgoorlukat WHERE id=".$id;
+     $result = mysqli_query($connexion, $q);
+     $row = $result->fetch_assoc();
+
+     $loc = $row['localisation'];
+
+     return $loc;
+
+}
+
+function getGnum($id) //Tested
+{
+     global $connexion;
+
+     $q = "SELECT numTel FROM goorgoorlukat WHERE id=".$id;
+     $result = mysqli_query($connexion, $q);
+     $row = $result->fetch_assoc();
+
+     $num = $row['numTel'];
+
+     return $num;
+
+}
+
+function getJobname($id) //Tested
+{
+     global $connexion;
+
+     $q = "SELECT libelle FROM job WHERE id=".$id;
+     $result = mysqli_query($connexion, $q);
+     $row = $result->fetch_assoc();
+
+     $jobName = $row['libelle'];
+
+     return $jobName;
+
+}
+
+////////////////////////////////////////////////////////////
+
+ function DisplayNotifs($GetNotifArray)
+  {
+     global $connexion;
+      
+     $finalArray = array();
+
+     foreach ($GetNotifArray as $key => $value)
+      {
+        
+           $finalArray[] = $value;
+
+           $idReceiver = $value['id_receiver'];
+           $idSender = $value['id_sender'];
+           $idJob = $value['job_id'];
+
+
+           $nameReceiver = getGname($idReceiver);
+           $nameSender = getGname($idSender);
+
+           $nameJob = getJobname($idjob);
+
+           $locReceiver = getGloc($idReceiver);
+           $locSender = getGloc($idSender);
+
+           $numReceiver = getGnum($idReceiver);
+           $numSender = getGnum($idSender);
+
+
+           $finalArray['nameReceiver'] = $nameReceiver;
+           $finalArray['nameSender'] = $nameSender;
+           $finalArray['nameJob'] = $nameJob;
+           $finalArray['locReceiver'] = $locReceiver;
+           $finalArray['locSender'] = $locSender;
+           $finalArray['numReceiver'] = $numReceiver;
+           $finalArray['numSender'] = $numSender;
+
+
+           
+
+                 
+
+      }
+     
+
+     return $finalArray;
+     echo $finalArray;
+
+  }
+ 
+
+ 
+ 
 
 
 ?>
