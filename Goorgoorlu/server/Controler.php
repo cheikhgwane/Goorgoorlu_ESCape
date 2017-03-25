@@ -4,20 +4,8 @@
   **  using the BCRYPT hash constant https://fr.wikipedia.org/wiki/Bcrypt
   *******/
 $connexion= mysqli_connect("localhost","root","","Goorgoorlu");
-function searchPrest($item){
-  
-  global $connexion;
-  $item = mysqli_real_escape_string($connexion,$item);
-  $a = mysqli_query($connexion,"select username,password from prestataire where prestataire.username='$item'");
-   
-   if($a!=false){
-     $a=mysqli_fetch_assoc($a);
-     $pass = $a['password'];
-     return  $pass;
-   }else {
-     return false;
-   }
-}
+
+ 
 
 
 function getAllUsers(){
@@ -29,85 +17,41 @@ function getAllUsers(){
   return $result;
 }
 
-function inJob(){
+
+
+function addJob($libelle){
   
   global $connexion;
   
-  $result = mysqli_query($connexion,"insert into job(libelle) ");
-   
-  return $result;
-}
+  $result = mysqli_query($connexion,"SELECT libelle FROM job");
 
+  $inList = false;
 
-function searchUser($item){
+   while ($row = $result->fetch_assoc())
+    {
+       if ($row['libelle'] === $libelle) 
+       {
+         $inList = true;
+         break;
+       }
+    }
   
-  global $connexion;
-  $item = mysqli_real_escape_string($connexion,$item);
-  $a = mysqli_query($connexion,"select username,password from client where client.mail='$item'");
-   
-   if($a!=false){
-     $a=mysqli_fetch_assoc($a);
-     $pass = $a['password'];
-     return  $pass;
-   }else {
-     return false;
-   }
-}
-function authen($user,$pword){
+  if (!$inList)
+   {
     
-    global $connexion ;
+     $result2 = mysqli_query($connexion,"insert into job(libelle) values('$libelle') ");
      
-    $user = mysqli_real_escape_string($connexion,$user);
-  
-     if(searchUser($user)!=false){
-        $pwd=searchUser($user);
-      if(password_verify($pword,$pwd)){
-        
-          echo "Acces granted";
-       }else{
-          echo "Acces denied";
-        }
-     }elseif(searchPrest($user)!=false){
-         $pwd=searchPrest($user);
-         echo password_verify($pword,$pwd);
-        if(password_verify($pword,$pwd)){
-             echo "Acces granted";
-       }else{
-            echo "Acces denied";
-        }
-     }
+     return $result2;
+
    
-    /* if(mysqli_query($connexion,"select username,password from client where Client.mail='$user'")){
-       echo "Existed";
-     }else {
-       echo "Don't existed";
-     }*/
+   }
+
+
 }
-function authenClient($user,$pword){ 
-    global $connexion ;
-    $user = mysqli_real_escape_string($connexion,$user);
-    $type = mysqli_real_escape_string($connexion,$type);
-   
-    
-     if(password_verify($pword,$result['password'])){
-       echo "Acces granted";
-     }else{
-       echo "Acces denied";
-     }
-   
-}
-function authenAdmin($user,$pword){ 
-    global $connexion ;
-    $user = mysqli_real_escape_string($connexion,$user);
-    $type = mysqli_real_escape_string($connexion,$type);
-    
-     if(password_verify($pword,$result['password'])){
-       echo "Acces granted";
-     }else{
-       echo "Acces denied";
-     }
-   
-}
+ 
+ 
+///////////////////////////////////////////////////////////////
+
 function createAdmin($log,$mdp){
  global $connexion ;
  $log = mysqli_real_escape_string($connexion,$log);
@@ -121,37 +65,111 @@ function createAdmin($log,$mdp){
    }
   
 }
-function createUser($type,$mail,$name,$username,$password){
-    global $connexion;
-    $password = password_hash($password,PASSWORD_BCRYPT);
-    $password = mysqli_real_escape_string($connexion,$password);
-    $type = mysqli_real_escape_string($connexion,$type);
-    $mail = mysqli_real_escape_string($connexion,$mail);
-    $name = mysqli_real_escape_string($connexion,$name);
-    $username = mysqli_real_escape_string($connexion,$username);
-      if(strtolower($type)=='utilisateur'){
-        if(mysqli_query($connexion,"insert into Client(nom,mail,password) values ('$name','$mail','$password')")){
-                echo "$type created";
-            }else{
-                echo "Error";
-            }
-      }else{
-          if(mysqli_query($connexion,"insert into Prestataire(nom,password,username) values ('$name','$password','$username')")){
-                echo "$type created";
-            }else{
-                echo "ici";
-                echo "Error";
-            }
-      }
-}
- if(isset($_POST['login']) && isset($_POST['pwd'])){
-   createAdmin($_POST['login'],$_POST['pwd']);
- }
- if(isset($_POST['username']) && isset($_POST['pword'])){
-    authen($_POST['username'],$_POST['pword']);
- }
-if(isset($_POST['profil']) && isset($_POST['mail']) && isset($_POST['fullname']) && isset($_POST['username']) && isset($_POST['pword'])){
-  createUser($_POST['profil'],$_POST['mail'],$_POST['fullname'],$_POST['username'],$_POST['pword']); 
-}
-//ajouter a chacune des ces fonctions un header pour rediriger les utilisateurs
+ 
+
+/////////////////////////////////////////////////////////////////////
+
+ function login($username, $pword)
+    {
+      global $connexion;
+
+         $result = getAllUsers();
+
+         $connected = -1;
+
+               $q = "INSERT INTO job(libelle) values ('Yeemiin')";
+              
+               $res = mysqli_query($connexion, $q);
+
+
+         while ($row = $result->fetch_assoc())
+          {
+              $uname = $row['username'];
+              $pass = $row['password'];
+
+              if ($uname == $username && $pass == $pword)
+               {
+
+                      $connected = $row['id'];  
+                     
+                       break;
+                       session_start();
+                       $_SESSION['loggedId'] = $connected;
+               }
+        
+          }
+
+          return $connected;
+
+    }
+
+////////////////////////////////////////////////////////////////////////////////////
+    
+  function signup($username , $pword, $type, $prenom,$nom,$numTel, $localisation)
+    {
+      global $connexion;
+
+        //Si le user n'exist pas deja 
+         $result = getAllUsers();
+ 
+         $exists = false;
+         $return = false;
+
+         while ($row = $result->fetch_assoc())
+          {
+              $uname = $row['username'];
+              $pass = $row['password'];
+
+              if ($uname == $username && $pass == $pword)
+               {
+                     $exists =  true;  
+                     break; 
+               }
+        
+          }
+
+         if (!$exists)
+          {
+            
+
+
+             $q = "INSERT INTO goorgoorlukat(username,password,type,prenom,nom,numTel,localisation) 
+                   values ('$username' , '$pword', $type ,'$prenom' ,'$nom',$numTel, '$localisation')";
+   
+
+ 
+          mysqli_query($connexion, $q);
+
+               {
+                $return = true;
+               }
+
+          }
+
+          return $return;
+
+    }
+
+
+/////////////////////////////////////////////////////////
+
+function Displayskills($id){
+     global $connexion;
+    $data=array();
+    $q  = 'select * from Gjob where id_Gg='.$id;
+    $result = mysqli_query($connexion,$q);
+    // $row = $result->fetch_assoc();
+    while ($row = $result->fetch_assoc()) {
+      $idjob=$row['id_job'];
+ ;
+    }
+         
+        echo json_encode($data);
+  }
+
+/////////////////////////////////////////////////////////////
+
+
+
+
 ?>
