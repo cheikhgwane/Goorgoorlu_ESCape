@@ -1,30 +1,44 @@
 /***************************************************************************/
-/********** GJS :contains js scripts for the main pages and annexes ********/
+/********** contains js scripts for the main pages and annexes ********/
 /***************************************************************************/
 
+    function Xhr(url, dataString)  
+    {  
+     
+    var xhr;    
+        xhr = new XMLHttpRequest();  
+     
 
-function Xhr(url, dataString)  
-{  
-// var book = document.getElementById("book").value;  
-var xhr;    
-    xhr = new XMLHttpRequest();  
- 
+        var data = dataString;  
+         xhr.open("POST", url, true);   
+         xhr.setRequestHeader("Content-Type", "application/json");                    
+         xhr.send(data);  
+         xhr.onreadystatechange = display_data;  
+        function display_data() {  
+         if (xhr.readyState == 4) {  
+          if (xhr.status == 200) {  
+            var result = JSON.parse(xhr.responseText);
+            
+            return result;
+            //Our JSON data sent by the php file
 
-    var data = dataString;  
-     xhr.open("POST", url, true);   
-     xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");                    
-     xhr.send(data);  
-     xhr.onreadystatechange = display_data;  
-    function display_data() {  
-     if (xhr.readyState == 4) {  
-      if (xhr.status == 200) {  
-       return xhr.responseText; 
-      } else {  
-           
-      }  
-     }  
-    }  
-}
+          } 
+          else{}  
+         }  
+        }  
+    }
+
+/// To get the params passed to an Url (in the case of displaying Notif Details)
+   var getParam = function (field)
+        {
+        var href = window.location.href;
+        var reg = new RegExp( '[?&]' + field + '=([^&#]*)', 'i' );
+        var string = reg.exec(href);
+        return string ? string[1] : null;
+    };
+
+////////////////////////////////////////////////////////////////////////////////
+
 
 
 idGet = function(id)
