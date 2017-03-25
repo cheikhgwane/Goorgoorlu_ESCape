@@ -28,6 +28,17 @@
         }  
     }
 
+/// To get the params passed to an Url (in the case of displaying Notif Details)
+   var getParam = function (field)
+        {
+        var href = window.location.href;
+        var reg = new RegExp( '[?&]' + field + '=([^&#]*)', 'i' );
+        var string = reg.exec(href);
+        return string ? string[1] : null;
+    };
+
+////////////////////////////////////////////////////////////////////////////////
+
 
 
 idGet = function(id)
