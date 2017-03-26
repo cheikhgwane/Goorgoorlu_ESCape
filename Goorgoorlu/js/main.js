@@ -1,8 +1,8 @@
 /***************************************************************************/
 /********** contains js scripts for the main pages and annexes ********/
 /***************************************************************************/
-
-    function Xhr(url, dataString)  
+    var result;
+    function Xhr(url, dataString, handler)  
     {  
      
     var xhr;    
@@ -17,15 +17,17 @@
         function display_data() {  
          if (xhr.readyState == 4) {  
           if (xhr.status == 200) {  
-            var result = JSON.parse(xhr.responseText);
-            
-            return result;
-            //Our JSON data sent by the php file
+           result = JSON.parse(xhr.responseText);
+       
+            handler(result);
+ 
+
 
           } 
           else{}  
          }  
         }  
+
     }
 
 /// To get the params passed to an Url (in the case of displaying Notif Details)
