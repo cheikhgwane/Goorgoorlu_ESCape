@@ -4,26 +4,29 @@
     var result;
     function Xhr(url, dataString, handler)  
     {  
-     
+    
+    // Now debogable !!!!
+
     var xhr;    
         xhr = new XMLHttpRequest();  
      
 
-        var data = dataString;  
-         xhr.open("POST", url, true);   
-         xhr.setRequestHeader("Content-Type", "application/json");                    
+         var data = dataString;  
+         xhr.open("POST", url, true);     
+         xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
          xhr.send(data);  
          xhr.onreadystatechange = display_data;  
-        function display_data() {  
-         if (xhr.readyState == 4) {  
-          if (xhr.status == 200) {  
-           result = JSON.parse(xhr.responseText);
-       
-            handler(result);
- 
+        
+         function display_data() {  
+           if (xhr.readyState == 4) {  
+            if (xhr.status == 200) {  
+             result = JSON.parse( xhr.responseText );
+             // result =   xhr.responseText;
+               
+              handler(result);
+   
 
-
-          } 
+            } 
           else{}  
          }  
         }  
